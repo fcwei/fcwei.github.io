@@ -4,19 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fuchuan Wei</title>
-  <meta name="description" content="Academic homepage of Fuchuan Wei, PhD candidate at Tsinghua University working on quantum information, quantum computation, quantum error correction, and quantum magic." />
-  <!-- Remove the next line when you want search engines to index the site. -->
+  <meta name="description" content="Academic homepage of Fuchuan Wei, PhD candidate in Mathematics at Tsinghua University, working on quantum information, quantum computation, quantum error correction, and quantum magic." />
   <meta name="robots" content="noindex, nofollow" />
   <style>
     :root {
-      --bg: #f6f7fb;
-      --panel: rgba(255,255,255,0.78);
+      --bg: #f7f8fc;
+      --panel: rgba(255,255,255,0.82);
       --panel-strong: rgba(255,255,255,0.96);
       --text: #111827;
-      --muted: #5b6474;
-      --line: rgba(17,24,39,0.08);
-      --accent: #1f4ed8;
-      --accent-soft: rgba(31,78,216,0.10);
+      --muted: #5f6b7a;
+      --line: rgba(17, 24, 39, 0.08);
+      --accent: #1d4ed8;
+      --accent-soft: rgba(29, 78, 216, 0.09);
       --shadow: 0 18px 50px rgba(22, 31, 61, 0.10);
       --radius: 24px;
       --max: 1120px;
@@ -29,23 +28,22 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(31,78,216,0.08), transparent 30%),
-        radial-gradient(circle at top right, rgba(14,165,233,0.08), transparent 24%),
+        radial-gradient(circle at top left, rgba(29, 78, 216, 0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 22%),
         var(--bg);
-      line-height: 1.65;
+      line-height: 1.66;
     }
 
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-
     .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(16px);
-      background: rgba(246,247,251,0.68);
+      backdrop-filter: blur(18px);
+      background: rgba(247,248,252,0.70);
       border-bottom: 1px solid rgba(17,24,39,0.05);
     }
 
@@ -58,9 +56,9 @@
     }
 
     .brand {
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      font-size: 1.02rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.05rem;
     }
 
     .nav-links {
@@ -73,33 +71,32 @@
     .nav-links a {
       color: var(--muted);
       font-size: 0.95rem;
-      transition: color 0.2s ease;
+      transition: color 0.18s ease;
     }
 
     .nav-links a:hover { color: var(--text); }
 
-    .hero {
-      padding: 64px 0 36px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.9fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
     .panel {
       background: var(--panel);
-      border: 1px solid rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.72);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
     }
 
-    .hero-card {
-      padding: 42px;
+    .hero {
+      padding: 68px 0 40px;
     }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card { padding: 42px; }
+    .side-card { padding: 30px; display: grid; gap: 18px; align-content: start; }
 
     .eyebrow {
       display: inline-flex;
@@ -110,26 +107,26 @@
       background: var(--accent-soft);
       color: var(--accent);
       font-size: 0.88rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 18px;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.5rem, 4.4vw, 4.4rem);
+      font-size: clamp(2.7rem, 4.8vw, 4.6rem);
       line-height: 0.98;
-      letter-spacing: -0.045em;
+      letter-spacing: -0.05em;
     }
 
     .subtitle {
       margin-top: 16px;
-      font-size: 1.12rem;
+      font-size: 1.1rem;
       color: var(--muted);
-      max-width: 780px;
+      max-width: 760px;
     }
 
     .meta-list {
-      margin: 22px 0 0;
+      margin: 24px 0 0;
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
@@ -158,7 +155,7 @@
       gap: 8px;
       padding: 12px 16px;
       border-radius: 14px;
-      font-weight: 600;
+      font-weight: 700;
       border: 1px solid transparent;
       transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
@@ -177,30 +174,23 @@
       border-color: rgba(17,24,39,0.08);
     }
 
-    .profile-card {
-      padding: 32px;
-      display: grid;
-      gap: 18px;
-      align-content: start;
-    }
-
     .avatar {
-      width: 108px;
-      height: 108px;
+      width: 110px;
+      height: 110px;
       border-radius: 28px;
       display: grid;
       place-items: center;
       font-size: 2rem;
       font-weight: 800;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.05em;
       color: var(--accent);
-      background: linear-gradient(135deg, rgba(31,78,216,0.14), rgba(14,165,233,0.12));
-      border: 1px solid rgba(31,78,216,0.08);
+      background: linear-gradient(135deg, rgba(29,78,216,0.14), rgba(14,165,233,0.12));
+      border: 1px solid rgba(29,78,216,0.08);
     }
 
     .profile-title {
       font-size: 1.15rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .profile-item {
@@ -217,12 +207,10 @@
       margin-bottom: 6px;
     }
 
-    section {
-      padding: 18px 0;
-    }
+    section { padding: 18px 0; }
 
     .section-title {
-      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
       letter-spacing: -0.03em;
       margin: 0 0 10px;
     }
@@ -230,7 +218,7 @@
     .section-subtitle {
       margin: 0 0 24px;
       color: var(--muted);
-      max-width: 720px;
+      max-width: 760px;
     }
 
     .two-col {
@@ -239,12 +227,8 @@
       gap: 24px;
     }
 
-    .content-card {
-      padding: 28px;
-    }
-
+    .content-card { padding: 28px; }
     .content-card p { margin: 0; color: var(--muted); }
-    .content-card + .content-card { margin-top: 0; }
 
     .tag-list {
       display: flex;
@@ -261,6 +245,12 @@
       border: 1px solid rgba(17,24,39,0.05);
       font-size: 0.9rem;
       font-weight: 600;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
     }
 
     .pub-toolbar {
@@ -287,13 +277,19 @@
       background: rgba(17,24,39,0.06);
     }
 
-    .pub-grid {
+    .pub-grid,
+    .talk-grid,
+    .card-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
 
-    .pub-card {
+    .pub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .pub-card,
+    .info-card,
+    .talk-card {
       padding: 22px;
       border-radius: 22px;
       background: var(--panel-strong);
@@ -303,33 +299,40 @@
       gap: 12px;
     }
 
-    .pub-top {
+    .pub-top,
+    .talk-top {
       display: flex;
       justify-content: space-between;
       gap: 12px;
       align-items: flex-start;
     }
 
-    .pub-type {
+    .pub-type,
+    .talk-tag {
       padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(31,78,216,0.09);
+      background: rgba(29,78,216,0.09);
       color: var(--accent);
       font-size: 0.8rem;
       font-weight: 700;
       white-space: nowrap;
     }
 
-    .pub-title {
-      font-size: 1.06rem;
-      font-weight: 700;
+    .pub-title,
+    .talk-title,
+    .info-title {
+      font-size: 1.05rem;
+      font-weight: 800;
       line-height: 1.35;
       letter-spacing: -0.02em;
     }
 
     .pub-authors,
     .pub-venue,
-    .pub-note {
+    .pub-note,
+    .talk-meta,
+    .info-text,
+    .list-text {
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -347,7 +350,7 @@
       background: rgba(17,24,39,0.04);
       border: 1px solid rgba(17,24,39,0.05);
       font-size: 0.9rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text);
     }
 
@@ -372,10 +375,16 @@
       margin-bottom: 6px;
     }
 
-    .timeline-text {
+    .timeline-text,
+    .edu-line { margin: 0; }
+
+    .inline-list {
       margin: 0;
-      color: var(--text);
+      padding-left: 18px;
+      color: var(--muted);
     }
+
+    .inline-list li + li { margin-top: 8px; }
 
     .footer {
       padding: 32px 0 60px;
@@ -397,23 +406,23 @@
       font-size: 0.92rem;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 980px) {
       .hero-grid,
       .two-col,
-      .pub-grid {
+      .split-grid,
+      .pub-grid,
+      .card-grid {
         grid-template-columns: 1fr;
       }
       .hero-card,
-      .profile-card,
-      .content-card {
-        padding: 24px;
-      }
+      .side-card,
+      .content-card { padding: 24px; }
     }
 
     @media (max-width: 720px) {
       .nav { min-height: 64px; }
       .nav-links { gap: 12px; }
-      .hero { padding-top: 34px; }
+      .hero { padding-top: 36px; }
       .button-row { gap: 10px; }
       .btn { width: 100%; }
       .footer-card { align-items: flex-start; }
@@ -426,9 +435,9 @@
       <a href="#top" class="brand">Fuchuan Wei</a>
       <nav class="nav-links">
         <a href="#about">About</a>
-        <a href="#research">Research</a>
         <a href="#publications">Publications</a>
-        <a href="#news">News</a>
+        <a href="#talks">Talks</a>
+        <a href="#activities">Activities</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -441,43 +450,43 @@
           <div class="eyebrow">Academic Homepage · GitHub Pages Ready</div>
           <h1>Fuchuan Wei</h1>
           <p class="subtitle">
-            PhD candidate at Tsinghua University working on quantum information, quantum computation,
-            quantum error correction, and quantum magic.
+            PhD candidate in Mathematics at Tsinghua University. I work on quantum information theory,
+            with interests in quantum computation, quantum error correction, and quantum magic.
           </p>
           <div class="meta-list">
+            <span class="meta-pill">Tsinghua University</span>
             <span class="meta-pill">Yau Mathematical Sciences Center</span>
-            <span class="meta-pill">Department of Mathematical Sciences</span>
-            <span class="meta-pill">Quantum Information</span>
+            <span class="meta-pill">Advisor: Zhengwei Liu</span>
           </div>
           <div class="button-row">
             <a class="btn btn-primary" href="https://scholar.google.com/citations?user=jvdR-9QAAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noopener">Google Scholar</a>
-            <a class="btn btn-secondary" href="https://orcid.org/0009-0001-5983-542X" target="_blank" rel="noopener">ORCID</a>
+            <a class="btn btn-secondary" href="assets/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
             <a class="btn btn-secondary" href="https://arxiv.org/search/?query=Fuchuan+Wei&searchtype=author" target="_blank" rel="noopener">arXiv</a>
-            <a class="btn btn-secondary" href="#contact">CV / Email</a>
+            <a class="btn btn-secondary" href="mailto:weifuchuan123@gmail.com">Email</a>
           </div>
         </div>
 
-        <aside class="panel profile-card">
+        <aside class="panel side-card">
           <div class="avatar">FW</div>
           <div>
             <div class="profile-title">Quick Info</div>
-            <div style="color: var(--muted); margin-top: 6px;">Replace the avatar with your own photo later if you want.</div>
+            <div style="color: var(--muted); margin-top: 6px;">You can replace this monogram with your own profile photo later.</div>
           </div>
           <div class="profile-item">
             <span class="profile-label">Current Position</span>
-            PhD Candidate
+            PhD Candidate in Mathematics
           </div>
           <div class="profile-item">
             <span class="profile-label">Affiliation</span>
-            Tsinghua University
+            Tsinghua University, Beijing, China
           </div>
           <div class="profile-item">
             <span class="profile-label">Research Interests</span>
             Quantum information, quantum computation, quantum error correction, quantum magic
           </div>
           <div class="profile-item">
-            <span class="profile-label">Supervisor</span>
-            Prof. Zhengwei Liu
+            <span class="profile-label">Email</span>
+            <a href="mailto:weifuchuan123@gmail.com">weifuchuan123@gmail.com</a>
           </div>
         </aside>
       </div>
@@ -488,47 +497,31 @@
         <div class="panel content-card">
           <h2 class="section-title">About</h2>
           <p>
-            I am a PhD candidate in the Yau Mathematical Sciences Center and the Department of Mathematical Sciences at
-            Tsinghua University. My current work focuses on quantum information theory, with interests spanning
-            quantum error correction, quantum algorithms, noise effects, and nonstabilizerness / quantum magic.
-          </p>
-        </div>
-        <div class="panel content-card">
-          <h2 class="section-title">Links</h2>
-          <p>
-            This template is intentionally lightweight so it can be deployed directly on GitHub Pages without any build step.
-            You only need to edit one HTML file.
+            I am a PhD candidate at Tsinghua University. My research lies in theoretical quantum information,
+            especially quantum computation, noise effects, quantum error correction, and nonstabilizerness / quantum magic.
+            I am interested in the structure of noisy quantum systems and the interplay between quantum resources,
+            complexity, and fault tolerance.
           </p>
           <div class="tag-list">
-            <a class="tag" href="https://scholar.google.com/citations?user=jvdR-9QAAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noopener">Scholar</a>
-            <a class="tag" href="https://orcid.org/0009-0001-5983-542X" target="_blank" rel="noopener">ORCID</a>
-            <a class="tag" href="https://arxiv.org/search/?query=Fuchuan+Wei&searchtype=author" target="_blank" rel="noopener">arXiv</a>
-            <a class="tag" href="#contact">CV</a>
+            <span class="tag">Quantum Information</span>
+            <span class="tag">Quantum Computation</span>
+            <span class="tag">Quantum Error Correction</span>
+            <span class="tag">Quantum Magic</span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="research">
-      <div class="container">
-        <h2 class="section-title">Research</h2>
-        <p class="section-subtitle">
-          A concise snapshot of the themes currently represented on this page. Edit or expand these paragraphs however you like.
-        </p>
-        <div class="two-col">
-          <div class="panel content-card">
-            <h3 style="margin-top:0; font-size:1.1rem;">Quantum information and computation</h3>
-            <p>
-              I am broadly interested in theoretical quantum information, especially the structure and capabilities of noisy
-              quantum systems, classical simulation of quantum processes, and resource-theoretic aspects of quantum computation.
-            </p>
-          </div>
-          <div class="panel content-card">
-            <h3 style="margin-top:0; font-size:1.1rem;">Quantum error correction and magic</h3>
-            <p>
-              My recent work also explores quantum error correction and long-range nonstabilizerness, aiming to understand how
-              magic, topology, complexity, and fault tolerance interact in many-body and coding-theoretic settings.
-            </p>
+        <div class="panel content-card">
+          <h2 class="section-title">Education</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">09/2021 – Present</div>
+              <p class="edu-line"><strong>Tsinghua University</strong>, Beijing, China</p>
+              <p class="list-text">Ph.D. in Mathematics · Advisor: Zhengwei Liu</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">09/2017 – 07/2021</div>
+              <p class="edu-line"><strong>Xi’an Jiaotong University</strong>, Xi’an, China</p>
+              <p class="list-text">B.S. in Mathematics</p>
+            </div>
           </div>
         </div>
       </div>
@@ -536,46 +529,108 @@
 
     <section id="publications">
       <div class="container">
-        <h2 class="section-title">Selected Publications</h2>
+        <h2 class="section-title">Selected Publications and Preprints</h2>
         <p class="section-subtitle">
-          I prefilled a few representative papers. Add, remove, or edit entries directly in the small JavaScript list near the bottom of this file.
+          A selected list drawn from the current CV. You can easily add more entries in the JavaScript data near the bottom of this file.
         </p>
         <div class="pub-toolbar" id="pub-filters"></div>
         <div class="pub-grid" id="pub-grid"></div>
       </div>
     </section>
 
-    <section id="news">
-      <div class="container two-col">
+    <section id="talks">
+      <div class="container split-grid">
         <div class="panel content-card">
-          <h2 class="section-title">Updates</h2>
+          <h2 class="section-title">Talks</h2>
+          <p class="section-subtitle" style="margin-bottom:18px;">
+            Recent invited or contributed talks listed in the CV.
+          </p>
+          <div class="talk-grid" id="talk-grid"></div>
+        </div>
+        <div class="panel content-card">
+          <h2 class="section-title">Honors and Awards</h2>
           <div class="timeline">
             <div class="timeline-item">
-              <div class="timeline-date">Template note</div>
-              <p class="timeline-text">This site currently ships with <span class="mono">noindex</span> enabled, so search engines are asked not to index it until you remove that line.</p>
+              <div class="timeline-date">09/2025</div>
+              <p class="timeline-text">National Scholarship</p>
             </div>
             <div class="timeline-item">
-              <div class="timeline-date">Customization tip</div>
-              <p class="timeline-text">Replace the “CV / Email” button with your own PDF and email link when you are ready to publish.</p>
+              <div class="timeline-date">2025–2026</div>
+              <p class="timeline-text">YMSC Full Scholarship</p>
             </div>
             <div class="timeline-item">
-              <div class="timeline-date">Deployment tip</div>
-              <p class="timeline-text">For GitHub Pages, naming the repository <span class="mono">yourusername.github.io</span> gives you the cleanest URL.</p>
+              <div class="timeline-date">2024</div>
+              <p class="timeline-text">Young Elite Scientists Sponsorship Program for Doctoral Students</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2024–2025</div>
+              <p class="timeline-text">YMSC Half Scholarship</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">05/2021</div>
+              <p class="timeline-text">Outstanding Graduates of Xi’an Jiaotong University</p>
             </div>
           </div>
         </div>
-        <div class="panel content-card" id="contact">
-          <h2 class="section-title">Contact</h2>
+      </div>
+    </section>
+
+    <section id="activities">
+      <div class="container two-col">
+        <div class="panel content-card">
+          <h2 class="section-title">Teaching</h2>
           <p>
-            Suggested fields to fill in before publishing:
+            Teaching assistant for Calculus, Linear Algebra, and Topics in Quantum Information and Computation.
           </p>
+        </div>
+        <div class="panel content-card">
+          <h2 class="section-title">Academic Service</h2>
+          <p>
+            Manuscript referee for Nature Communications, Physical Review Letters, PRX Quantum, Physical Review B,
+            Quantum, and the QIP conference.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="card-grid">
+          <article class="info-card">
+            <div class="info-title">Notes for future customization</div>
+            <div class="info-text">
+              This version keeps the site lightweight and deployable on GitHub Pages with no build step. You only need to edit one HTML file.
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="info-title">Visibility control</div>
+            <div class="info-text">
+              The page currently includes <span class="mono">noindex</span>, so search engines are asked not to index it until you remove that line.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container two-col">
+        <div class="panel content-card">
+          <h2 class="section-title">Contact</h2>
           <div class="tag-list" style="margin-top:14px;">
-            <span class="tag">Email: replace-me@tsinghua.edu.cn</span>
-            <span class="tag">CV: /assets/cv.pdf</span>
-            <span class="tag">Photo: /assets/profile.jpg</span>
+            <a class="tag" href="mailto:weifuchuan123@gmail.com">Email</a>
+            <a class="tag" href="assets/cv.pdf" target="_blank" rel="noopener">CV PDF</a>
+            <a class="tag" href="https://scholar.google.com/citations?user=jvdR-9QAAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="tag" href="https://arxiv.org/search/?query=Fuchuan+Wei&searchtype=author" target="_blank" rel="noopener">arXiv</a>
           </div>
           <p style="margin-top:18px;">
-            If you want, you can also add links to slides, talks, notes, GitHub repositories, or a short teaching section.
+            I left phone numbers off the public-facing page for privacy, but they can be added back easily if you want.
+          </p>
+        </div>
+        <div class="panel content-card">
+          <h2 class="section-title">Repository reminder</h2>
+          <p>
+            After editing this file locally, the usual workflow is: save the file, commit the changes in VS Code,
+            and push to your <span class="mono">fcwei.github.io</span> repository.
           </p>
         </div>
       </div>
@@ -592,51 +647,108 @@
   <script>
     const publications = [
       {
-        title: "Long-range nonstabilizerness from quantum codes, orders, and correlations",
+        title: "Simulating non-completely positive actions via exponentiation of Hermitian-preserving maps",
+        authors: "Fuchuan Wei*, Zhengwei Liu*, Guoding Liu, et al.",
+        venue: "npj Quantum Information 10(1):134, 2024",
+        type: "Journal",
+        note: "Equal contribution paper on simulating Hermitian-preserving maps.",
+        links: []
+      },
+      {
+        title: "Sudden death of quantum advantage in correlation generations",
+        authors: "Weixiao Sun*, Fuchuan Wei*, Yuguo Shao, Zhaohui Wei",
+        venue: "Science Advances 10(47): eadr5002, 2024",
+        type: "Journal",
+        note: "Studies the breakdown of quantum advantage in correlation generation tasks.",
+        links: []
+      },
+      {
+        title: "Separation between Entanglement Criteria and Entanglement Detection Protocols",
+        authors: "Zhengwei Liu*, Fuchuan Wei*",
+        venue: "Physical Review Research, 2025",
+        type: "Journal",
+        note: "On separations between entanglement criteria and entanglement detection protocols.",
+        links: []
+      },
+      {
+        title: "Long-range nonstabilizerness and quantum codes, phases, and complexity",
         authors: "Fuchuan Wei, Zi-Wen Liu",
-        venue: "arXiv preprint, 2025",
+        venue: "arXiv:2503.04566",
         type: "Preprint",
-        note: "On long-range magic, topology, quantum codes, and complexity.",
+        note: "Also presented at QIP 2026.",
         links: [
           { label: "arXiv", url: "https://arxiv.org/abs/2503.04566" }
         ]
       },
       {
-        title: "Simulating noisy variational quantum algorithms: A polynomial approach",
+        title: "Noise robustness and threshold of many-body quantum magic",
+        authors: "Fuchuan Wei, Zi-Wen Liu",
+        venue: "arXiv:2410.21215",
+        type: "Preprint",
+        note: "On noise robustness and thresholds in many-body quantum magic.",
+        links: [
+          { label: "arXiv", url: "https://arxiv.org/abs/2410.21215" }
+        ]
+      },
+      {
+        title: "BELT: Block Encoding of Linear Transformation on Density Matrices",
+        authors: "Fuchuan Wei, R. Lu, Yuguo Shao, et al.",
+        venue: "arXiv:2508.12858",
+        type: "Preprint",
+        note: "Block encoding methods for linear transformations on density matrices.",
+        links: [
+          { label: "arXiv", url: "https://arxiv.org/abs/2508.12858" }
+        ]
+      },
+      {
+        title: "Theory of low-weight quantum codes",
+        authors: "Fuchuan Wei, Zizhao Han, Anqiang He, et al.",
+        venue: "arXiv:2601.19848",
+        type: "Preprint",
+        note: "A theoretical study of low-weight quantum codes.",
+        links: [
+          { label: "arXiv", url: "https://arxiv.org/abs/2601.19848" }
+        ]
+      },
+      {
+        title: "Simulating Noisy Variational Quantum Algorithms: A Polynomial Approach",
         authors: "Yuguo Shao, Fuchuan Wei, Song Cheng, Zhengwei Liu",
         venue: "Physical Review Letters 133(12):120603, 2024",
         type: "Journal",
-        note: "Polynomial-scale simulation method for noisy variational quantum algorithms.",
+        note: "A polynomial approach to classical simulation of noisy VQAs.",
         links: [
-          { label: "PRL", url: "https://link.aps.org/doi/10.1103/PhysRevLett.133.120603" },
-          { label: "arXiv", url: "https://arxiv.org/abs/2306.05804" }
+          { label: "PRL", url: "https://link.aps.org/doi/10.1103/PhysRevLett.133.120603" }
         ]
+      }
+    ];
+
+    const talks = [
+      {
+        title: "Long-range nonstabilizerness and quantum codes, phases, and complexity",
+        meta: "QIP 2026 · Riga, Latvia · 01/2026",
+        tag: "QIP"
+      },
+      {
+        title: "Long-range nonstabilizerness and quantum codes, phases, and complexity",
+        meta: "QTOT 2025 · Beijing, China · 08/2025",
+        tag: "Talk"
+      },
+      {
+        title: "Noise robustness and threshold of many-body quantum magic",
+        meta: "MBQM 2024 · Abu Dhabi, UAE · 11/2024",
+        tag: "Talk"
       },
       {
         title: "Simulating non-completely positive actions via exponentiation of Hermitian-preserving maps",
-        authors: "Fuchuan Wei, Zhenhuan Liu, Guoding Liu, Zizhao Han, Dong-Ling Deng, Zhengwei Liu",
-        venue: "npj Quantum Information 10, Article 134, 2024",
-        type: "Journal",
-        note: "Quantum algorithmic treatment of Hermitian-preserving maps beyond complete positivity.",
-        links: [
-          { label: "npj", url: "https://www.nature.com/articles/s41534-024-00949-z" }
-        ]
-      },
-      {
-        title: "Sudden death of quantum advantage in correlation generations",
-        authors: "Weixiao Sun, Fuchuan Wei, Yuguo Shao, Zhaohui Wei",
-        venue: "Science Advances 10(47), eadr5002, 2024",
-        type: "Journal",
-        note: "A noise-driven breakdown of quantum advantage in correlation generation tasks.",
-        links: [
-          { label: "Sci. Adv.", url: "https://www.science.org/doi/10.1126/sciadv.adr5002" }
-        ]
+        meta: "AQIS 2024 · Sapporo, Japan · 08/2024",
+        tag: "Talk"
       }
     ];
 
     const filters = ["All", "Journal", "Preprint"];
     const filterContainer = document.getElementById("pub-filters");
     const grid = document.getElementById("pub-grid");
+    const talkGrid = document.getElementById("talk-grid");
     let activeFilter = "All";
 
     function renderFilters() {
@@ -679,8 +791,25 @@
       });
     }
 
+    function renderTalks() {
+      talkGrid.innerHTML = "";
+      talks.forEach(talk => {
+        const card = document.createElement("article");
+        card.className = "talk-card";
+        card.innerHTML = `
+          <div class="talk-top">
+            <div class="talk-title">${talk.title}</div>
+            <div class="talk-tag">${talk.tag}</div>
+          </div>
+          <div class="talk-meta">${talk.meta}</div>
+        `;
+        talkGrid.appendChild(card);
+      });
+    }
+
     renderFilters();
     renderPublications();
+    renderTalks();
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>

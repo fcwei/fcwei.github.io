@@ -8,17 +8,55 @@
   <meta name="robots" content="noindex, nofollow" />
   <style>
     :root {
-      --bg: #f7f8fc;
-      --panel: rgba(255,255,255,0.82);
-      --panel-strong: rgba(255,255,255,0.96);
-      --text: #111827;
-      --muted: #5f6b7a;
-      --line: rgba(17, 24, 39, 0.08);
-      --accent: #1d4ed8;
-      --accent-soft: rgba(29, 78, 216, 0.09);
-      --shadow: 0 18px 50px rgba(22, 31, 61, 0.10);
+      --bg: #0b1020;
+      --panel: rgba(15, 23, 42, 0.78);
+      --panel-strong: rgba(15, 23, 42, 0.92);
+      --text: #e5e7eb;
+      --muted: #9aa6b2;
+      --line: rgba(148, 163, 184, 0.18);
+      --accent: #7dd3fc;
+      --accent-soft: rgba(125, 211, 252, 0.14);
+      --shadow: 0 18px 50px rgba(2, 6, 23, 0.42);
+      --header-bg: rgba(2, 6, 23, 0.68);
+      --header-line: rgba(148,163,184,0.12);
+      --meta-bg: rgba(148,163,184,0.08);
+      --button-secondary-bg: rgba(15,23,42,0.9);
+      --button-secondary-line: rgba(148,163,184,0.18);
+      --filter-bg: rgba(15,23,42,0.88);
+      --filter-hover-bg: rgba(148,163,184,0.14);
+      --card-line: rgba(148,163,184,0.16);
+      --avatar-bg: linear-gradient(135deg, rgba(125,211,252,0.14), rgba(96,165,250,0.14));
+      --avatar-line: rgba(125,211,252,0.18);
+      --pub-tag-bg: rgba(29,78,216,0.09);
       --radius: 24px;
       --max: 1120px;
+      --bg-overlay-left: rgba(96, 165, 250, 0.14);
+      --bg-overlay-right: rgba(125, 211, 252, 0.12);
+    }
+
+    body[data-theme="light"] {
+      --bg: #f5f7fb;
+      --panel: rgba(255, 255, 255, 0.84);
+      --panel-strong: rgba(255, 255, 255, 0.96);
+      --text: #0f172a;
+      --muted: #475569;
+      --line: rgba(15, 23, 42, 0.10);
+      --accent: #0369a1;
+      --accent-soft: rgba(3, 105, 161, 0.10);
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --header-bg: rgba(255, 255, 255, 0.78);
+      --header-line: rgba(15,23,42,0.08);
+      --meta-bg: rgba(15,23,42,0.04);
+      --button-secondary-bg: rgba(255,255,255,0.9);
+      --button-secondary-line: rgba(15,23,42,0.10);
+      --filter-bg: rgba(255,255,255,0.92);
+      --filter-hover-bg: rgba(15,23,42,0.08);
+      --card-line: rgba(15,23,42,0.08);
+      --avatar-bg: linear-gradient(135deg, rgba(14,165,233,0.10), rgba(59,130,246,0.10));
+      --avatar-line: rgba(14,165,233,0.14);
+      --pub-tag-bg: rgba(14,165,233,0.10);
+      --bg-overlay-left: rgba(14, 165, 233, 0.10);
+      --bg-overlay-right: rgba(59, 130, 246, 0.08);
     }
 
     * { box-sizing: border-box; }
@@ -28,10 +66,11 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(29, 78, 216, 0.08), transparent 30%),
-        radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 22%),
+        radial-gradient(circle at top left, var(--bg-overlay-left), transparent 28%),
+        radial-gradient(circle at top right, var(--bg-overlay-right), transparent 24%),
         var(--bg);
       line-height: 1.66;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -43,8 +82,8 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: rgba(247,248,252,0.70);
-      border-bottom: 1px solid rgba(17,24,39,0.05);
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--header-line);
     }
 
     .nav {
@@ -76,9 +115,24 @@
 
     .nav-links a:hover { color: var(--text); }
 
+    .theme-toggle {
+      appearance: none;
+      border: 1px solid var(--button-secondary-line);
+      background: var(--button-secondary-bg);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 9px 12px;
+      font: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .theme-toggle:hover { transform: translateY(-1px); }
+
     .panel {
       background: var(--panel);
-      border: 1px solid rgba(255,255,255,0.72);
+      border: 1px solid rgba(148,163,184,0.14);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
@@ -134,8 +188,8 @@
 
     .meta-pill {
       padding: 8px 12px;
-      background: rgba(17,24,39,0.04);
-      border: 1px solid rgba(17,24,39,0.05);
+      background: var(--meta-bg);
+      border: 1px solid var(--button-secondary-line);
       border-radius: 999px;
       color: var(--muted);
       font-size: 0.92rem;
@@ -163,15 +217,15 @@
     .btn:hover { transform: translateY(-1px); }
 
     .btn-primary {
-      background: var(--text);
-      color: #fff;
-      box-shadow: 0 10px 24px rgba(17,24,39,0.16);
+      background: var(--accent);
+      color: #08111f;
+      box-shadow: 0 10px 24px rgba(2,6,23,0.35);
     }
 
     .btn-secondary {
-      background: #fff;
+      background: var(--button-secondary-bg);
       color: var(--text);
-      border-color: rgba(17,24,39,0.08);
+      border-color: var(--button-secondary-line);
     }
 
     .avatar {
@@ -184,8 +238,8 @@
       font-weight: 800;
       letter-spacing: -0.05em;
       color: var(--accent);
-      background: linear-gradient(135deg, rgba(29,78,216,0.14), rgba(14,165,233,0.12));
-      border: 1px solid rgba(29,78,216,0.08);
+      background: var(--avatar-bg);
+      border: 1px solid var(--avatar-line);
     }
 
     .profile-title {
@@ -240,9 +294,9 @@
     .tag {
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(17,24,39,0.04);
+      background: var(--meta-bg);
       color: var(--text);
-      border: 1px solid rgba(17,24,39,0.05);
+      border: 1px solid var(--button-secondary-line);
       font-size: 0.9rem;
       font-weight: 600;
     }
@@ -263,8 +317,8 @@
     .filter-btn {
       padding: 9px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(17,24,39,0.08);
-      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--button-secondary-line);
+      background: var(--filter-bg);
       color: var(--muted);
       cursor: pointer;
       font: inherit;
@@ -274,7 +328,7 @@
     .filter-btn.active,
     .filter-btn:hover {
       color: var(--text);
-      background: rgba(17,24,39,0.06);
+      background: var(--filter-hover-bg);
     }
 
     .pub-grid,
@@ -293,8 +347,8 @@
       padding: 22px;
       border-radius: 22px;
       background: var(--panel-strong);
-      border: 1px solid rgba(17,24,39,0.06);
-      box-shadow: 0 12px 32px rgba(22,31,61,0.08);
+      border: 1px solid var(--card-line);
+      box-shadow: 0 12px 32px rgba(2,6,23,0.32);
       display: grid;
       gap: 12px;
     }
@@ -311,7 +365,7 @@
     .talk-tag {
       padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(29,78,216,0.09);
+      background: var(--pub-tag-bg);
       color: var(--accent);
       font-size: 0.8rem;
       font-weight: 700;
@@ -347,8 +401,8 @@
     .pub-links a {
       padding: 8px 10px;
       border-radius: 12px;
-      background: rgba(17,24,39,0.04);
-      border: 1px solid rgba(17,24,39,0.05);
+      background: var(--meta-bg);
+      border: 1px solid var(--button-secondary-line);
       font-size: 0.9rem;
       font-weight: 700;
       color: var(--text);
@@ -439,6 +493,7 @@
         <a href="#talks">Talks</a>
         <a href="#activities">Activities</a>
         <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme">Light mode</button>
       </nav>
     </div>
   </header>
@@ -599,7 +654,7 @@
           <article class="info-card">
             <div class="info-title">Notes for future customization</div>
             <div class="info-text">
-              This version keeps the site lightweight and deployable on GitHub Pages with no build step. You only need to edit one HTML file.
+              This version defaults to dark mode and lets visitors switch to a light theme. The theme preference is saved in the browser automatically.
             </div>
           </article>
           <article class="info-card">
@@ -643,6 +698,33 @@
       <div class="mono">Edit index.html → commit → push</div>
     </div>
   </footer>
+
+  <script>
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.body.setAttribute("data-theme", savedTheme);
+
+    function updateThemeToggle() {
+      const toggle = document.getElementById("theme-toggle");
+      if (!toggle) return;
+      const current = document.body.getAttribute("data-theme") || "dark";
+      toggle.textContent = current === "dark" ? "Light mode" : "Dark mode";
+      toggle.setAttribute("aria-label", current === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("theme-toggle");
+      updateThemeToggle();
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          const current = document.body.getAttribute("data-theme") || "dark";
+          const next = current === "dark" ? "light" : "dark";
+          document.body.setAttribute("data-theme", next);
+          localStorage.setItem("theme", next);
+          updateThemeToggle();
+        });
+      }
+    });
+  </script>
 
   <script>
     const publications = [

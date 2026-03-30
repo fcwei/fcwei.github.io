@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fuchuan Wei</title>
+  <meta name="description" content="Academic homepage of Fuchuan Wei, PhD candidate at Tsinghua University working on quantum information, quantum computation, quantum error correction, and quantum magic." />
+  <!-- Remove the next line when you want search engines to index the site. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: rgba(255,255,255,0.78);
+      --panel-strong: rgba(255,255,255,0.96);
+      --text: #111827;
+      --muted: #5b6474;
+      --line: rgba(17,24,39,0.08);
+      --accent: #1f4ed8;
+      --accent-soft: rgba(31,78,216,0.10);
+      --shadow: 0 18px 50px rgba(22, 31, 61, 0.10);
+      --radius: 24px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(31,78,216,0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(14,165,233,0.08), transparent 24%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(246,247,251,0.68);
+      border-bottom: 1px solid rgba(17,24,39,0.05);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 72px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-size: 1.02rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 64px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-card {
+      padding: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4.4vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
+    .subtitle {
+      margin-top: 16px;
+      font-size: 1.12rem;
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    .meta-list {
+      margin: 22px 0 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .meta-pill {
+      padding: 8px 12px;
+      background: rgba(17,24,39,0.04);
+      border: 1px solid rgba(17,24,39,0.05);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--text);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(17,24,39,0.16);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: rgba(17,24,39,0.08);
+    }
+
+    .profile-card {
+      padding: 32px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .avatar {
+      width: 108px;
+      height: 108px;
+      border-radius: 28px;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--accent);
+      background: linear-gradient(135deg, rgba(31,78,216,0.14), rgba(14,165,233,0.12));
+      border: 1px solid rgba(31,78,216,0.08);
+    }
+
+    .profile-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .profile-item {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .profile-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    section {
+      padding: 18px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+      letter-spacing: -0.03em;
+      margin: 0 0 10px;
+    }
+
+    .section-subtitle {
+      margin: 0 0 24px;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .content-card {
+      padding: 28px;
+    }
+
+    .content-card p { margin: 0; color: var(--muted); }
+    .content-card + .content-card { margin-top: 0; }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(17,24,39,0.04);
+      color: var(--text);
+      border: 1px solid rgba(17,24,39,0.05);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .pub-toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 8px 0 22px;
+    }
+
+    .filter-btn {
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(17,24,39,0.08);
+      background: rgba(255,255,255,0.8);
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      transition: all 0.18s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: var(--text);
+      background: rgba(17,24,39,0.06);
+    }
+
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .pub-card {
+      padding: 22px;
+      border-radius: 22px;
+      background: var(--panel-strong);
+      border: 1px solid rgba(17,24,39,0.06);
+      box-shadow: 0 12px 32px rgba(22,31,61,0.08);
+      display: grid;
+      gap: 12px;
+    }
+
+    .pub-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .pub-type {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(31,78,216,0.09);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .pub-title {
+      font-size: 1.06rem;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .pub-authors,
+    .pub-venue,
+    .pub-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .pub-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 2px;
+    }
+
+    .pub-links a {
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(17,24,39,0.04);
+      border: 1px solid rgba(17,24,39,0.05);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      padding: 18px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .timeline-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .timeline-text {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .footer {
+      padding: 32px 0 60px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-card {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .two-col,
+      .pub-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-card,
+      .profile-card,
+      .content-card {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav { min-height: 64px; }
+      .nav-links { gap: 12px; }
+      .hero { padding-top: 34px; }
+      .button-row { gap: 10px; }
+      .btn { width: 100%; }
+      .footer-card { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">Fuchuan Wei</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="panel hero-card">
+          <div class="eyebrow">Academic Homepage · GitHub Pages Ready</div>
+          <h1>Fuchuan Wei</h1>
+          <p class="subtitle">
+            PhD candidate at Tsinghua University working on quantum information, quantum computation,
+            quantum error correction, and quantum magic.
+          </p>
+          <div class="meta-list">
+            <span class="meta-pill">Yau Mathematical Sciences Center</span>
+            <span class="meta-pill">Department of Mathematical Sciences</span>
+            <span class="meta-pill">Quantum Information</span>
+          </div>
+          <div class="button-row">
+            <a class="btn btn-primary" href="https://scholar.google.com/citations?user=jvdR-9QAAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="btn btn-secondary" href="https://orcid.org/0009-0001-5983-542X" target="_blank" rel="noopener">ORCID</a>
+            <a class="btn btn-secondary" href="https://arxiv.org/search/?query=Fuchuan+Wei&searchtype=author" target="_blank" rel="noopener">arXiv</a>
+            <a class="btn btn-secondary" href="#contact">CV / Email</a>
+          </div>
+        </div>
+
+        <aside class="panel profile-card">
+          <div class="avatar">FW</div>
+          <div>
+            <div class="profile-title">Quick Info</div>
+            <div style="color: var(--muted); margin-top: 6px;">Replace the avatar with your own photo later if you want.</div>
+          </div>
+          <div class="profile-item">
+            <span class="profile-label">Current Position</span>
+            PhD Candidate
+          </div>
+          <div class="profile-item">
+            <span class="profile-label">Affiliation</span>
+            Tsinghua University
+          </div>
+          <div class="profile-item">
+            <span class="profile-label">Research Interests</span>
+            Quantum information, quantum computation, quantum error correction, quantum magic
+          </div>
+          <div class="profile-item">
+            <span class="profile-label">Supervisor</span>
+            Prof. Zhengwei Liu
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container two-col">
+        <div class="panel content-card">
+          <h2 class="section-title">About</h2>
+          <p>
+            I am a PhD candidate in the Yau Mathematical Sciences Center and the Department of Mathematical Sciences at
+            Tsinghua University. My current work focuses on quantum information theory, with interests spanning
+            quantum error correction, quantum algorithms, noise effects, and nonstabilizerness / quantum magic.
+          </p>
+        </div>
+        <div class="panel content-card">
+          <h2 class="section-title">Links</h2>
+          <p>
+            This template is intentionally lightweight so it can be deployed directly on GitHub Pages without any build step.
+            You only need to edit one HTML file.
+          </p>
+          <div class="tag-list">
+            <a class="tag" href="https://scholar.google.com/citations?user=jvdR-9QAAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noopener">Scholar</a>
+            <a class="tag" href="https://orcid.org/0009-0001-5983-542X" target="_blank" rel="noopener">ORCID</a>
+            <a class="tag" href="https://arxiv.org/search/?query=Fuchuan+Wei&searchtype=author" target="_blank" rel="noopener">arXiv</a>
+            <a class="tag" href="#contact">CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <h2 class="section-title">Research</h2>
+        <p class="section-subtitle">
+          A concise snapshot of the themes currently represented on this page. Edit or expand these paragraphs however you like.
+        </p>
+        <div class="two-col">
+          <div class="panel content-card">
+            <h3 style="margin-top:0; font-size:1.1rem;">Quantum information and computation</h3>
+            <p>
+              I am broadly interested in theoretical quantum information, especially the structure and capabilities of noisy
+              quantum systems, classical simulation of quantum processes, and resource-theoretic aspects of quantum computation.
+            </p>
+          </div>
+          <div class="panel content-card">
+            <h3 style="margin-top:0; font-size:1.1rem;">Quantum error correction and magic</h3>
+            <p>
+              My recent work also explores quantum error correction and long-range nonstabilizerness, aiming to understand how
+              magic, topology, complexity, and fault tolerance interact in many-body and coding-theoretic settings.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <h2 class="section-title">Selected Publications</h2>
+        <p class="section-subtitle">
+          I prefilled a few representative papers. Add, remove, or edit entries directly in the small JavaScript list near the bottom of this file.
+        </p>
+        <div class="pub-toolbar" id="pub-filters"></div>
+        <div class="pub-grid" id="pub-grid"></div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="container two-col">
+        <div class="panel content-card">
+          <h2 class="section-title">Updates</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">Template note</div>
+              <p class="timeline-text">This site currently ships with <span class="mono">noindex</span> enabled, so search engines are asked not to index it until you remove that line.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">Customization tip</div>
+              <p class="timeline-text">Replace the “CV / Email” button with your own PDF and email link when you are ready to publish.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">Deployment tip</div>
+              <p class="timeline-text">For GitHub Pages, naming the repository <span class="mono">yourusername.github.io</span> gives you the cleanest URL.</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel content-card" id="contact">
+          <h2 class="section-title">Contact</h2>
+          <p>
+            Suggested fields to fill in before publishing:
+          </p>
+          <div class="tag-list" style="margin-top:14px;">
+            <span class="tag">Email: replace-me@tsinghua.edu.cn</span>
+            <span class="tag">CV: /assets/cv.pdf</span>
+            <span class="tag">Photo: /assets/profile.jpg</span>
+          </div>
+          <p style="margin-top:18px;">
+            If you want, you can also add links to slides, talks, notes, GitHub repositories, or a short teaching section.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container panel footer-card">
+      <div>© <span id="year"></span> Fuchuan Wei. Built as a static site for GitHub Pages.</div>
+      <div class="mono">Edit index.html → commit → push</div>
+    </div>
+  </footer>
+
+  <script>
+    const publications = [
+      {
+        title: "Long-range nonstabilizerness from quantum codes, orders, and correlations",
+        authors: "Fuchuan Wei, Zi-Wen Liu",
+        venue: "arXiv preprint, 2025",
+        type: "Preprint",
+        note: "On long-range magic, topology, quantum codes, and complexity.",
+        links: [
+          { label: "arXiv", url: "https://arxiv.org/abs/2503.04566" }
+        ]
+      },
+      {
+        title: "Simulating noisy variational quantum algorithms: A polynomial approach",
+        authors: "Yuguo Shao, Fuchuan Wei, Song Cheng, Zhengwei Liu",
+        venue: "Physical Review Letters 133(12):120603, 2024",
+        type: "Journal",
+        note: "Polynomial-scale simulation method for noisy variational quantum algorithms.",
+        links: [
+          { label: "PRL", url: "https://link.aps.org/doi/10.1103/PhysRevLett.133.120603" },
+          { label: "arXiv", url: "https://arxiv.org/abs/2306.05804" }
+        ]
+      },
+      {
+        title: "Simulating non-completely positive actions via exponentiation of Hermitian-preserving maps",
+        authors: "Fuchuan Wei, Zhenhuan Liu, Guoding Liu, Zizhao Han, Dong-Ling Deng, Zhengwei Liu",
+        venue: "npj Quantum Information 10, Article 134, 2024",
+        type: "Journal",
+        note: "Quantum algorithmic treatment of Hermitian-preserving maps beyond complete positivity.",
+        links: [
+          { label: "npj", url: "https://www.nature.com/articles/s41534-024-00949-z" }
+        ]
+      },
+      {
+        title: "Sudden death of quantum advantage in correlation generations",
+        authors: "Weixiao Sun, Fuchuan Wei, Yuguo Shao, Zhaohui Wei",
+        venue: "Science Advances 10(47), eadr5002, 2024",
+        type: "Journal",
+        note: "A noise-driven breakdown of quantum advantage in correlation generation tasks.",
+        links: [
+          { label: "Sci. Adv.", url: "https://www.science.org/doi/10.1126/sciadv.adr5002" }
+        ]
+      }
+    ];
+
+    const filters = ["All", "Journal", "Preprint"];
+    const filterContainer = document.getElementById("pub-filters");
+    const grid = document.getElementById("pub-grid");
+    let activeFilter = "All";
+
+    function renderFilters() {
+      filterContainer.innerHTML = "";
+      filters.forEach(filter => {
+        const button = document.createElement("button");
+        button.className = "filter-btn" + (filter === activeFilter ? " active" : "");
+        button.textContent = filter;
+        button.addEventListener("click", () => {
+          activeFilter = filter;
+          renderFilters();
+          renderPublications();
+        });
+        filterContainer.appendChild(button);
+      });
+    }
+
+    function renderPublications() {
+      grid.innerHTML = "";
+      const shown = activeFilter === "All"
+        ? publications
+        : publications.filter(pub => pub.type === activeFilter);
+
+      shown.forEach(pub => {
+        const card = document.createElement("article");
+        card.className = "pub-card";
+        card.innerHTML = `
+          <div class="pub-top">
+            <div class="pub-title">${pub.title}</div>
+            <div class="pub-type">${pub.type}</div>
+          </div>
+          <div class="pub-authors">${pub.authors}</div>
+          <div class="pub-venue">${pub.venue}</div>
+          <div class="pub-note">${pub.note}</div>
+          <div class="pub-links">
+            ${pub.links.map(link => `<a href="${link.url}" target="_blank" rel="noopener">${link.label}</a>`).join("")}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    renderFilters();
+    renderPublications();
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
